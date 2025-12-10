@@ -1,0 +1,1644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Just In Time Mystery Shopping 2025</title>
+    <style>
+        :root {
+            --primary: #32b8c6;
+            --primary-dark: #1d7480;
+            --secondary: #2d4a8a;
+            --accent: #f59e0b;
+            --success: #10b981;
+            --warning: #ef4444;
+            --bg: #f8fafc;
+            --surface: #ffffff;
+            --text: #1e293b;
+            --text-light: #64748b;
+            --border: #e2e8f0;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #0f172a;
+                --surface: #1e293b;
+                --text: #f1f5f9;
+                --text-light: #94a3b8;
+                --border: #334155;
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        header {
+            background: var(--surface);
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-group {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .logo {
+            height: 40px;
+            cursor: pointer;
+        }
+
+        .nav {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .nav-btn {
+            padding: 0.625rem 1.25rem;
+            border: none;
+            border-radius: 8px;
+            background: transparent;
+            color: var(--text);
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .nav-btn:hover {
+            background: var(--bg);
+        }
+
+        .nav-btn.active {
+            background: var(--primary);
+            color: white;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, rgba(50, 184, 198, 0.1) 0%, rgba(45, 74, 138, 0.1) 100%);
+            border-radius: 16px;
+            padding: 3rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+
+        .hero p {
+            font-size: 1.125rem;
+            color: var(--text-light);
+        }
+
+        .page {
+            display: none;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        .form-section {
+            background: var(--surface);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.08);
+            border: 1px solid var(--border);
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--primary);
+        }
+
+        .section-number {
+            background: var(--primary);
+            color: white;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            font-size: 0.9375rem;
+        }
+
+        .form-label .required {
+            color: var(--warning);
+        }
+
+        .form-input, .form-select, .form-textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 0.9375rem;
+            background: var(--surface);
+            color: var(--text);
+            transition: all 0.2s;
+        }
+
+        .form-input:focus, .form-select:focus, .form-textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(50, 184, 198, 0.1);
+        }
+
+        .form-textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .radio-group, .checkbox-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .radio-label, .checkbox-label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            transition: all 0.2s;
+        }
+
+        .radio-label:hover, .checkbox-label:hover {
+            border-color: var(--primary);
+            background: rgba(50, 184, 198, 0.05);
+        }
+
+        .radio-label input:checked + span, .checkbox-label input:checked + span {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .rating-group {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .rating-btn {
+            width: 40px;
+            height: 40px;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            background: var(--surface);
+            color: var(--text);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .rating-btn:hover {
+            border-color: var(--primary);
+            transform: scale(1.1);
+        }
+
+        .rating-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .store-card {
+            background: var(--surface);
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.08);
+            border: 1px solid var(--border);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .store-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
+            border-color: var(--primary);
+        }
+
+        .store-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 1rem;
+        }
+
+        .store-name {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .store-badge {
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .badge-excellent {
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--success);
+        }
+
+        .badge-good {
+            background: rgba(50, 184, 198, 0.1);
+            color: var(--primary);
+        }
+
+        .badge-average {
+            background: rgba(245, 158, 11, 0.1);
+            color: var(--accent);
+        }
+
+        .store-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .stat-item {
+            background: var(--bg);
+            padding: 0.75rem;
+            border-radius: 8px;
+        }
+
+        .stat-label {
+            font-size: 0.75rem;
+            color: var(--text-light);
+            margin-bottom: 0.25rem;
+        }
+
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .slide-panel {
+            position: fixed;
+            top: 0;
+            right: -600px;
+            width: 600px;
+            height: 100vh;
+            background: var(--surface);
+            box-shadow: -10px 0 15px -3px rgba(0,0,0,0.1);
+            transition: right 0.3s;
+            z-index: 1000;
+            overflow-y: auto;
+        }
+
+        .slide-panel.open {
+            right: 0;
+        }
+
+        .panel-header {
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            background: var(--surface);
+            z-index: 10;
+        }
+
+        .panel-tabs {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .panel-tab {
+            padding: 0.75rem 1.25rem;
+            border: none;
+            background: transparent;
+            color: var(--text-light);
+            cursor: pointer;
+            font-weight: 500;
+            border-bottom: 2px solid transparent;
+            transition: all 0.2s;
+        }
+
+        .panel-tab.active {
+            color: var(--primary);
+            border-bottom-color: var(--primary);
+        }
+
+        .panel-content {
+            padding: 1.5rem;
+        }
+
+        .panel-close {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text);
+        }
+
+        .audit-item {
+            background: var(--bg);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border: 1px solid var(--border);
+        }
+
+        .audit-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.75rem;
+        }
+
+        .auditor-name {
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        .audit-time {
+            font-size: 0.875rem;
+            color: var(--text-light);
+        }
+
+        .audit-scores {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .score-badge {
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.8125rem;
+            font-weight: 600;
+        }
+
+        .score-excellent {
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--success);
+        }
+
+        .score-good {
+            background: rgba(50, 184, 198, 0.1);
+            color: var(--primary);
+        }
+
+        .score-fair {
+            background: rgba(245, 158, 11, 0.1);
+            color: var(--accent);
+        }
+
+        .analysis-section {
+            background: var(--bg);
+            border-radius: 8px;
+            padding: 1.25rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border);
+        }
+
+        .analysis-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .analysis-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9375rem;
+            margin-bottom: 1rem;
+        }
+
+        .badge-excellent-big {
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--success);
+        }
+
+        .badge-good-big {
+            background: rgba(50, 184, 198, 0.1);
+            color: var(--primary);
+        }
+
+        .badge-average-big {
+            background: rgba(245, 158, 11, 0.1);
+            color: var(--accent);
+        }
+
+        .analysis-text {
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .analysis-bullets {
+            list-style: none;
+            padding: 0;
+        }
+
+        .analysis-bullets li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--text-light);
+        }
+
+        .analysis-bullets li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        .analysis-numbered {
+            list-style: none;
+            padding: 0;
+            counter-reset: item;
+        }
+
+        .analysis-numbered li {
+            padding: 0.75rem 0;
+            padding-left: 2rem;
+            position: relative;
+            color: var(--text-light);
+            counter-increment: item;
+        }
+
+        .analysis-numbered li:before {
+            content: counter(item);
+            position: absolute;
+            left: 0;
+            background: var(--primary);
+            color: white;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .btn {
+            padding: 0.875rem 1.75rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(50, 184, 198, 0.3);
+        }
+
+        .btn-secondary {
+            background: var(--surface);
+            color: var(--text);
+            border: 1px solid var(--border);
+        }
+
+        .btn-secondary:hover {
+            background: var(--bg);
+        }
+
+        .btn-sm {
+            padding: 0.5rem 1rem;
+            font-size: 0.875rem;
+        }
+
+        .btn-delete {
+            background: var(--warning);
+            color: white;
+            padding: 0.5rem 1rem;
+            font-size: 0.875rem;
+        }
+
+        .btn-delete:hover {
+            background: #dc2626;
+        }
+
+        .submit-section {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal.show {
+            display: flex;
+        }
+
+        .modal-content {
+            background: var(--surface);
+            border-radius: 16px;
+            padding: 2rem;
+            max-width: 500px;
+            width: 90%;
+            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
+            animation: slideUp 0.3s;
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .modal-icon {
+            width: 64px;
+            height: 64px;
+            margin: 0 auto 1rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--success);
+        }
+
+        .modal-title {
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .modal-text {
+            text-align: center;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+        }
+
+        .modal-actions {
+            display: flex;
+            gap: 1rem;
+            flex-direction: column;
+        }
+
+        .login-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .login-modal.show {
+            display: flex;
+        }
+
+        .login-form {
+            background: var(--surface);
+            border-radius: 16px;
+            padding: 2rem;
+            max-width: 400px;
+            width: 90%;
+            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
+            animation: slideUp 0.3s;
+        }
+
+        .login-form h2 {
+            margin-bottom: 1.5rem;
+            color: var(--text);
+            text-align: center;
+        }
+
+        .login-error {
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid var(--warning);
+            color: var(--warning);
+            padding: 0.75rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            font-size: 0.875rem;
+            display: none;
+        }
+
+        .login-error.show {
+            display: block;
+        }
+
+        .footer {
+            background: var(--surface);
+            border-top: 1px solid var(--border);
+            padding: 2rem;
+            margin-top: 4rem;
+            text-align: center;
+        }
+
+        .footer-logos {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-text {
+            color: var(--text-light);
+            font-size: 0.875rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 1.75rem;
+            }
+
+            .slide-panel {
+                width: 100%;
+                right: -100%;
+            }
+
+            .submit-section {
+                flex-direction: column;
+            }
+
+            .modal-actions {
+                flex-direction: row;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo-group">
+                <img src="https://user-gen-media-assets.s3.amazonaws.com/seedream_images/8d75ab07-2b6e-4a33-bf66-be17d78ea840.png" alt="Amigos" class="logo">
+                <img src="https://user-gen-media-assets.s3.amazonaws.com/seedream_images/12dc6e6e-f4de-4e0b-a47b-e6f5bfdabb59.png" alt="Just In Time" class="logo">
+            </div>
+            <nav class="nav">
+                <a href="?page=audit" class="nav-btn active" id="auditNavBtn" onclick="navigateTo('audit', event)">📋 New Audit</a>
+                <a href="?page=dashboard" class="nav-btn" id="dashboardNavBtn" onclick="navigateTo('dashboard', event)">📊 Store Dashboard</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Audit Form Page -->
+        <div id="auditPage" class="page active">
+            <div class="hero">
+                <h1>📋 Just In Time Mystery Shopping 2025</h1>
+                <p>Complete comprehensive store evaluation and audit report</p>
+            </div>
+
+            <form id="auditForm">
+                <!-- Section 1: Store & Visit Details -->
+                <div class="form-section">
+                    <div class="section-header">
+                        <div class="section-number">1</div>
+                        <h2 class="section-title">Store & Visit Details</h2>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Store Name <span class="required">*</span></label>
+                        <select class="form-select" name="storeName" required>
+                            <option value="">Select Store</option>
+                            <option>Jayanagar</option>
+                            <option>Orion Mall (Brigade Gateway)</option>
+                            <option>HSR Layout</option>
+                            <option>Whitefield (Phoenix Market City)</option>
+                            <option>Indiranagar</option>
+                            <option>Bhartiya Mall Of Bengaluru</option>
+                            <option>Orion Uptown Mall</option>
+                            <option>Phoenix Mall of Asia</option>
+                            <option>Koramangala</option>
+                            <option>Electronic City (M5 E-City Mall)</option>
+                            <option>Inorbit Mall (Hubballi)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Mystery Shopper Name <span class="required">*</span></label>
+                        <input type="text" class="form-input" name="shoppingName" placeholder="Your full name" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Sales Person Name <span class="required">*</span></label>
+                        <input type="text" class="form-input" name="salesPersonName" placeholder="Staff member name" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Visit Date <span class="required">*</span></label>
+                        <input type="date" class="form-input" name="visitDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Visit Time <span class="required">*</span></label>
+                        <input type="time" class="form-input" name="visitTime" required>
+                    </div>
+                </div>
+
+                <!-- Section 2: Store Ambience & Hygiene -->
+                <div class="form-section">
+                    <div class="section-header">
+                        <div class="section-number">2</div>
+                        <h2 class="section-title">Store Ambience & Hygiene</h2>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Lighting - Appealing?</label>
+                        <div class="radio-group">
+                            <label class="radio-label"><input type="radio" name="lighting" value="Yes"> <span>Yes</span></label>
+                            <label class="radio-label"><input type="radio" name="lighting" value="No"> <span>No</span></label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Music Volume - Appropriate?</label>
+                        <div class="radio-group">
+                            <label class="radio-label"><input type="radio" name="music" value="Yes"> <span>Yes</span></label>
+                            <label class="radio-label"><input type="radio" name="music" value="No"> <span>No</span></label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">AC - Comfortable?</label>
+                        <div class="radio-group">
+                            <label class="radio-label"><input type="radio" name="ac" value="Yes"> <span>Yes</span></label>
+                            <label class="radio-label"><input type="radio" name="ac" value="No"> <span>No</span></label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Showcases - Clean & Well Organized?</label>
+                        <div class="radio-group">
+                            <label class="radio-label"><input type="radio" name="showcases" value="Yes"> <span>Yes</span></label>
+                            <label class="radio-label"><input type="radio" name="showcases" value="No"> <span>No</span></label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Watches Aligned & Price Tags Visible?</label>
+                        <div class="radio-group">
+                            <label class="radio-label"><input type="radio" name="alignment" value="Yes"> <span>Yes</span></label>
+                            <label class="radio-label"><input type="radio" name="alignment" value="No"> <span>No</span></label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Overall Hygiene Rating (1-10)</label>
+                        <div class="rating-group">
+                            <button type="button" class="rating-btn" data-rating="1" data-field="hygieneRating">1</button>
+                            <button type="button" class="rating-btn" data-rating="2" data-field="hygieneRating">2</button>
+                            <button type="button" class="rating-btn" data-rating="3" data-field="hygieneRating">3</button>
+                            <button type="button" class="rating-btn" data-rating="4" data-field="hygieneRating">4</button>
+                            <button type="button" class="rating-btn" data-rating="5" data-field="hygieneRating">5</button>
+                            <button type="button" class="rating-btn" data-rating="6" data-field="hygieneRating">6</button>
+                            <button type="button" class="rating-btn" data-rating="7" data-field="hygieneRating">7</button>
+                            <button type="button" class="rating-btn" data-rating="8" data-field="hygieneRating">8</button>
+                            <button type="button" class="rating-btn" data-rating="9" data-field="hygieneRating">9</button>
+                            <button type="button" class="rating-btn" data-rating="10" data-field="hygieneRating">10</button>
+                        </div>
+                        <input type="hidden" name="hygieneRating" required>
+                    </div>
+                </div>
+
+                <!-- Section 3: Staff Interaction -->
+                <div class="form-section">
+                    <div class="section-header">
+                        <div class="section-number">3</div>
+                        <h2 class="section-title">Staff Interaction & Greeting</h2>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Staff Greeted Within 5 Seconds?</label>
+                        <div class="radio-group">
+                            <label class="radio-label"><input type="radio" name="greeting" value="Yes"> <span>Yes</span></label>
+                            <label class="radio-label"><input type="radio" name="greeting" value="No"> <span>No</span></label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Staff Friendly & Approachable?</label>
+                        <div class="radio-group">
+                            <label class="radio-label"><input type="radio" name="friendly" value="Yes"> <span>Yes</span></label>
+                            <label class="radio-label"><input type="radio" name="friendly" value="No"> <span>No</span></label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Staff Uniform & Grooming - Professional?</label>
+                        <div class="radio-group">
+                            <label class="radio-label"><input type="radio" name="uniform" value="Yes"> <span>Yes</span></label>
+                            <label class="radio-label"><input type="radio" name="uniform" value="No"> <span>No</span></label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Staff Interaction Rating (1-10)</label>
+                        <div class="rating-group">
+                            <button type="button" class="rating-btn" data-rating="1" data-field="staffRating">1</button>
+                            <button type="button" class="rating-btn" data-rating="2" data-field="staffRating">2</button>
+                            <button type="button" class="rating-btn" data-rating="3" data-field="staffRating">3</button>
+                            <button type="button" class="rating-btn" data-rating="4" data-field="staffRating">4</button>
+                            <button type="button" class="rating-btn" data-rating="5" data-field="staffRating">5</button>
+                            <button type="button" class="rating-btn" data-rating="6" data-field="staffRating">6</button>
+                            <button type="button" class="rating-btn" data-rating="7" data-field="staffRating">7</button>
+                            <button type="button" class="rating-btn" data-rating="8" data-field="staffRating">8</button>
+                            <button type="button" class="rating-btn" data-rating="9" data-field="staffRating">9</button>
+                            <button type="button" class="rating-btn" data-rating="10" data-field="staffRating">10</button>
+                        </div>
+                        <input type="hidden" name="staffRating" required>
+                    </div>
+                </div>
+
+                <!-- Section 4: Watch Handling & Presentation -->
+                <div class="form-section">
+                    <div class="section-header">
+                        <div class="section-number">4</div>
+                        <h2 class="section-title">Watch Handling & Product Presentation</h2>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Staff Used Gloves While Handling Watch?</label>
+                        <div class="radio-group">
+                            <label class="radio-label"><input type="radio" name="gloves" value="Yes"> <span>Yes</span></label>
+                            <label class="radio-label"><input type="radio" name="gloves" value="No"> <span>No</span></label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Watch Presented on Tray/Premium Setting?</label>
+                        <div class="radio-group">
+                            <label class="radio-label"><input type="radio" name="tray" value="Yes"> <span>Yes</span></label>
+                            <label class="radio-label"><input type="radio" name="tray" value="No"> <span>No</span></label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Product Explanation - Staff Confident?</label>
+                        <div class="radio-group">
+                            <label class="radio-label"><input type="radio" name="productConfidence" value="Yes"> <span>Yes</span></label>
+                            <label class="radio-label"><input type="radio" name="productConfidence" value="No"> <span>No</span></label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Options Shown - How Many?</label>
+                        <select class="form-select" name="optionsShown" required>
+                            <option value="">Select</option>
+                            <option>1 Option</option>
+                            <option>2 Options</option>
+                            <option>3+ Options (Good/Better/Best)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Product Handling Rating (1-10)</label>
+                        <div class="rating-group">
+                            <button type="button" class="rating-btn" data-rating="1" data-field="productRating">1</button>
+                            <button type="button" class="rating-btn" data-rating="2" data-field="productRating">2</button>
+                            <button type="button" class="rating-btn" data-rating="3" data-field="productRating">3</button>
+                            <button type="button" class="rating-btn" data-rating="4" data-field="productRating">4</button>
+                            <button type="button" class="rating-btn" data-rating="5" data-field="productRating">5</button>
+                            <button type="button" class="rating-btn" data-rating="6" data-field="productRating">6</button>
+                            <button type="button" class="rating-btn" data-rating="7" data-field="productRating">7</button>
+                            <button type="button" class="rating-btn" data-rating="8" data-field="productRating">8</button>
+                            <button type="button" class="rating-btn" data-rating="9" data-field="productRating">9</button>
+                            <button type="button" class="rating-btn" data-rating="10" data-field="productRating">10</button>
+                        </div>
+                        <input type="hidden" name="productRating" required>
+                    </div>
+                </div>
+
+                <!-- Section 5: Sales & Closing -->
+                <div class="form-section">
+                    <div class="section-header">
+                        <div class="section-number">5</div>
+                        <h2 class="section-title">Sales & Checkout Experience</h2>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Billing Process - Smooth & Efficient?</label>
+                        <div class="radio-group">
+                            <label class="radio-label"><input type="radio" name="billing" value="Yes"> <span>Yes</span></label>
+                            <label class="radio-label"><input type="radio" name="billing" value="No"> <span>No</span></label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Google Review QR Code Visible?</label>
+                        <div class="radio-group">
+                            <label class="radio-label"><input type="radio" name="googleQR" value="Yes"> <span>Yes</span></label>
+                            <label class="radio-label"><input type="radio" name="googleQR" value="No"> <span>No</span></label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Customer Thanked & Invited to Return?</label>
+                        <div class="radio-group">
+                            <label class="radio-label"><input type="radio" name="thanked" value="Yes"> <span>Yes</span></label>
+                            <label class="radio-label"><input type="radio" name="thanked" value="No"> <span>No</span></label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Sales Experience Rating (1-10)</label>
+                        <div class="rating-group">
+                            <button type="button" class="rating-btn" data-rating="1" data-field="salesRating">1</button>
+                            <button type="button" class="rating-btn" data-rating="2" data-field="salesRating">2</button>
+                            <button type="button" class="rating-btn" data-rating="3" data-field="salesRating">3</button>
+                            <button type="button" class="rating-btn" data-rating="4" data-field="salesRating">4</button>
+                            <button type="button" class="rating-btn" data-rating="5" data-field="salesRating">5</button>
+                            <button type="button" class="rating-btn" data-rating="6" data-field="salesRating">6</button>
+                            <button type="button" class="rating-btn" data-rating="7" data-field="salesRating">7</button>
+                            <button type="button" class="rating-btn" data-rating="8" data-field="salesRating">8</button>
+                            <button type="button" class="rating-btn" data-rating="9" data-field="salesRating">9</button>
+                            <button type="button" class="rating-btn" data-rating="10" data-field="salesRating">10</button>
+                        </div>
+                        <input type="hidden" name="salesRating" required>
+                    </div>
+                </div>
+
+                <!-- Section 6: Final Comments -->
+                <div class="form-section">
+                    <div class="section-header">
+                        <div class="section-number">6</div>
+                        <h2 class="section-title">Final Comments & Overall Rating</h2>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Overall Experience Rating (1-10)</label>
+                        <div class="rating-group">
+                            <button type="button" class="rating-btn" data-rating="1" data-field="overallRating">1</button>
+                            <button type="button" class="rating-btn" data-rating="2" data-field="overallRating">2</button>
+                            <button type="button" class="rating-btn" data-rating="3" data-field="overallRating">3</button>
+                            <button type="button" class="rating-btn" data-rating="4" data-field="overallRating">4</button>
+                            <button type="button" class="rating-btn" data-rating="5" data-field="overallRating">5</button>
+                            <button type="button" class="rating-btn" data-rating="6" data-field="overallRating">6</button>
+                            <button type="button" class="rating-btn" data-rating="7" data-field="overallRating">7</button>
+                            <button type="button" class="rating-btn" data-rating="8" data-field="overallRating">8</button>
+                            <button type="button" class="rating-btn" data-rating="9" data-field="overallRating">9</button>
+                            <button type="button" class="rating-btn" data-rating="10" data-field="overallRating">10</button>
+                        </div>
+                        <input type="hidden" name="overallRating" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">What Worked Well</label>
+                        <textarea class="form-textarea" name="whatWorked" placeholder="Describe positive aspects..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Key Gaps & Areas for Improvement</label>
+                        <textarea class="form-textarea" name="keyGaps" placeholder="Describe areas that need improvement..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Additional Comments</label>
+                        <textarea class="form-textarea" name="additionalComments" placeholder="Any other observations..."></textarea>
+                    </div>
+                </div>
+
+                <div class="submit-section">
+                    <button type="button" class="btn btn-secondary" onclick="saveDraft()">Save Draft</button>
+                    <button type="submit" class="btn btn-primary">Submit Audit</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Dashboard Page -->
+        <div id="dashboardPage" class="page">
+            <div class="hero">
+                <h1>📊 Store Dashboard</h1>
+                <p>Real-time performance metrics and audit analytics</p>
+            </div>
+
+            <div class="dashboard-grid" id="storeGrid"></div>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="login-modal">
+        <div class="login-form">
+            <h2>🔐 Admin Login</h2>
+            <div id="loginError" class="login-error">Invalid credentials</div>
+            <div class="form-group">
+                <label class="form-label">Username</label>
+                <input type="text" id="loginUsername" class="form-input" placeholder="admin" autocomplete="username">
+            </div>
+            <div class="form-group">
+                <label class="form-label">Password</label>
+                <input type="password" id="loginPassword" class="form-input" placeholder="admin123" autocomplete="current-password">
+            </div>
+            <div class="modal-actions">
+                <button class="btn btn-secondary" onclick="closeLogin()">Cancel</button>
+                <button class="btn btn-primary" onclick="attemptLogin()">Login</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide Panel for Store Analysis -->
+    <div id="slidePanel" class="slide-panel">
+        <div class="panel-header">
+            <h2 id="panelStoreName"></h2>
+            <button class="panel-close" onclick="closePanel()">&times;</button>
+        </div>
+        <div class="panel-tabs" id="panelTabs">
+            <button class="panel-tab active" onclick="switchPanelTab('audits')">Recent Audits</button>
+            <button class="panel-tab" onclick="switchPanelTab('analysis')">Store Analysis</button>
+        </div>
+        <div style="padding: 1.5rem; border-bottom: 1px solid var(--border);" id="statsSection"></div>
+        <div style="padding: 0 1.5rem; margin: 1rem 0;" id="filterSection"></div>
+        <div class="panel-content" id="panelContent"></div>
+    </div>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-icon">✓</div>
+            <h2 class="modal-title">Audit Submitted!</h2>
+            <p class="modal-text">Your mystery shopper audit has been successfully recorded.</p>
+            <div class="modal-actions">
+                <button class="btn btn-primary" onclick="downloadPDF()">📄 Download PDF</button>
+                <button class="btn btn-secondary" onclick="downloadCSV()">📊 Download CSV</button>
+                <button class="btn btn-secondary" onclick="closeSuccess()">New Audit</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-logos">
+            <img src="https://user-gen-media-assets.s3.amazonaws.com/seedream_images/8d75ab07-2b6e-4a33-bf66-be17d78ea840.png" alt="Amigos" class="logo">
+            <img src="https://user-gen-media-assets.s3.amazonaws.com/seedream_images/12dc6e6e-f4de-4e0b-a47b-e6f5bfdabb59.png" alt="Just In Time" class="logo">
+        </div>
+        <p class="footer-text">Powered by Launchquests</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script>
+        // Store Data with Analysis Templates
+        const stores = [
+            { name: 'Jayanagar', location: 'Bengaluru', audits: 12, avgScore: 8.5, status: 'excellent' },
+            { name: 'Orion Mall (Brigade Gateway)', location: 'Bengaluru', audits: 15, avgScore: 9.2, status: 'excellent' },
+            { name: 'HSR Layout', location: 'Bengaluru', audits: 8, avgScore: 7.8, status: 'good' },
+            { name: 'Whitefield (Phoenix Market City)', location: 'Bengaluru', audits: 14, avgScore: 8.9, status: 'excellent' },
+            { name: 'Indiranagar', location: 'Bengaluru', audits: 11, avgScore: 8.2, status: 'good' },
+            { name: 'Bhartiya Mall Of Bengaluru', location: 'Bengaluru', audits: 9, avgScore: 7.5, status: 'good' },
+            { name: 'Orion Uptown Mall', location: 'Bengaluru', audits: 10, avgScore: 8.0, status: 'good' },
+            { name: 'Phoenix Mall of Asia', location: 'Bengaluru', audits: 13, avgScore: 9.0, status: 'excellent' },
+            { name: 'Koramangala', location: 'Bengaluru', audits: 7, avgScore: 7.2, status: 'average' },
+            { name: 'Electronic City (M5 E-City Mall)', location: 'Bengaluru', audits: 6, avgScore: 7.0, status: 'average' },
+            { name: 'Inorbit Mall (Hubballi)', location: 'Hubballi', audits: 5, avgScore: 8.3, status: 'good' }
+        ];
+
+        // Sample audits for each store with Round assignments
+        const storeAudits = {
+            'Jayanagar': [
+                { shopper: 'Divyashree', date: '2025-12-03 14:15', score: 8, round: 3, greeting: 'Yes', gloves: 'Yes', googleQR: 'Yes', billing: 'Yes', uniform: 'Yes' },
+                { shopper: 'Ankit', date: '2025-12-02 11:30', score: 9, round: 3, greeting: 'Yes', gloves: 'Yes', googleQR: 'Yes', billing: 'Yes', uniform: 'Yes' },
+                { shopper: 'Priya', date: '2025-11-15 10:00', score: 8, round: 2, greeting: 'Yes', gloves: 'Yes', googleQR: 'Yes', billing: 'Yes', uniform: 'Yes' },
+                { shopper: 'Rahul', date: '2025-10-20 15:30', score: 8, round: 1, greeting: 'Yes', gloves: 'No', googleQR: 'No', billing: 'Yes', uniform: 'Yes' }
+            ],
+            'Koramangala': [
+                { shopper: 'Divyashree', date: '2025-11-27 14:15', score: 7, round: 2, greeting: 'No', gloves: 'No', googleQR: 'Yes', billing: 'Yes', uniform: 'No' },
+                { shopper: 'Priya', date: '2025-11-20 10:00', score: 7, round: 2, greeting: 'No', gloves: 'No', googleQR: 'No', billing: 'Yes', uniform: 'No' },
+                { shopper: 'Raj', date: '2025-10-05 09:00', score: 6, round: 1, greeting: 'No', gloves: 'No', googleQR: 'No', billing: 'No', uniform: 'No' }
+            ],
+            'Orion Uptown Mall': [
+                { shopper: 'Sneha', date: '2025-12-01 13:45', score: 8, round: 3, greeting: 'Yes', gloves: 'Yes', googleQR: 'Yes', billing: 'Yes', uniform: 'Yes' },
+                { shopper: 'Vikram', date: '2025-11-10 11:00', score: 8, round: 2, greeting: 'Yes', gloves: 'Yes', googleQR: 'Yes', billing: 'Yes', uniform: 'Yes' },
+                { shopper: 'Neha', date: '2025-09-15 14:20', score: 8, round: 1, greeting: 'Yes', gloves: 'Yes', googleQR: 'No', billing: 'Yes', uniform: 'Yes' }
+            ]
+        };
+
+        let isLoggedIn = false;
+        let currentPanelTab = 'audits';
+        let currentStorePanel = null;
+        let selectedRound = 'all';
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const page = urlParams.get('page') || 'dashboard';
+            initializePage(page);
+        });
+
+        function initializePage(page) {
+            setTodayDate();
+            setupRatingButtons();
+            setupFormSubmit();
+            
+            if (page === 'audit') {
+                switchPage('audit');
+                document.getElementById('auditNavBtn').classList.add('active');
+                document.getElementById('dashboardNavBtn').classList.remove('active');
+            } else {
+                renderDashboard();
+                document.getElementById('dashboardNavBtn').classList.add('active');
+                document.getElementById('auditNavBtn').classList.remove('active');
+                switchPage('dashboard');
+            }
+        }
+
+        function navigateTo(page, event) {
+            event.preventDefault();
+            if (page === 'dashboard' && !isLoggedIn) {
+                document.getElementById('loginModal').classList.add('show');
+                document.getElementById('loginUsername').focus();
+                return;
+            }
+            window.location.href = `?page=${page}`;
+        }
+
+        function setTodayDate() {
+            const dateInput = document.querySelector('input[name="visitDate"]');
+            if (dateInput) dateInput.value = new Date().toISOString().split('T')[0];
+        }
+
+        function setupRatingButtons() {
+            document.addEventListener('click', (e) => {
+                if (e.target.classList.contains('rating-btn')) {
+                    const field = e.target.dataset.field;
+                    const rating = e.target.dataset.rating;
+                    document.querySelectorAll(`.rating-btn[data-field="${field}"]`).forEach(btn => btn.classList.remove('active'));
+                    e.target.classList.add('active');
+                    document.querySelector(`input[name="${field}"]`).value = rating;
+                }
+            });
+        }
+
+        function setupFormSubmit() {
+            document.getElementById('auditForm').addEventListener('submit', (e) => {
+                e.preventDefault();
+                const formData = new FormData(e.target);
+                const auditData = Object.fromEntries(formData);
+                auditData.timestamp = new Date().toISOString();
+                
+                // Save to localStorage
+                const store = auditData.storeName;
+                if (!storeAudits[store]) storeAudits[store] = [];
+                storeAudits[store].unshift({
+                    shopper: auditData.shoppingName,
+                    date: new Date().toLocaleString(),
+                    score: parseInt(auditData.overallRating),
+                    greeting: auditData.greeting,
+                    gloves: auditData.gloves,
+                    googleQR: auditData.googleQR
+                });
+                
+                // Update store stats
+                const storeObj = stores.find(s => s.name === store);
+                if (storeObj) storeObj.audits++;
+                
+                showSuccess();
+            });
+        }
+
+        function renderDashboard() {
+            const grid = document.getElementById('storeGrid');
+            grid.innerHTML = stores.map(store => `
+                <div class="store-card" onclick="openStorePanel('${store.name}')">
+                    <div class="store-header">
+                        <h3 class="store-name">${store.name}</h3>
+                        <span class="store-badge badge-${store.status === 'excellent' ? 'excellent' : store.status === 'good' ? 'good' : 'average'}">
+                            ${store.status.toUpperCase()}
+                        </span>
+                    </div>
+                    <div class="store-stats">
+                        <div class="stat-item">
+                            <div class="stat-label">Total Audits</div>
+                            <div class="stat-value">${store.audits}</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Avg Score</div>
+                            <div class="stat-value">${store.avgScore}</div>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function openStorePanel(storeName) {
+            currentStorePanel = storeName;
+            currentPanelTab = 'audits';
+            document.getElementById('panelStoreName').textContent = storeName;
+            renderPanelContent();
+            document.getElementById('slidePanel').classList.add('open');
+        }
+
+        function closePanel() {
+            document.getElementById('slidePanel').classList.remove('open');
+        }
+
+        function switchPanelTab(tab) {
+            currentPanelTab = tab;
+            document.querySelectorAll('.panel-tab').forEach(t => t.classList.remove('active'));
+            event.target.classList.add('active');
+            selectedRound = 'all';
+            renderPanelContent();
+        }
+        
+        function switchRound(round) {
+            selectedRound = round;
+            renderPanelContent();
+        }
+
+        function renderPanelContent() {
+            const content = document.getElementById('panelContent');
+            const statsDiv = document.getElementById('statsSection');
+            const filterDiv = document.getElementById('filterSection');
+            const store = currentStorePanel;
+            const allAudits = storeAudits[store] || [];
+            
+            // Filter audits by round
+            const filteredAudits = selectedRound === 'all' ? allAudits : allAudits.filter(a => a.round === parseInt(selectedRound));
+            
+            // Render Stats Section
+            if (currentPanelTab === 'audits') {
+                const avgScore = filteredAudits.length > 0 ? (filteredAudits.reduce((sum, a) => sum + a.score, 0) / filteredAudits.length).toFixed(1) : 0;
+                const totalAudits = filteredAudits.length;
+                
+                statsDiv.innerHTML = `
+                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-bottom: 1.5rem;">
+                        <div style="background: var(--bg); padding: 1rem; border-radius: 8px; text-align: center;">
+                            <div style="font-size: 0.875rem; color: var(--text-light); margin-bottom: 0.5rem;">Average Score</div>
+                            <div style="font-size: 2rem; font-weight: 700; color: var(--primary);">${avgScore}</div>
+                        </div>
+                        <div style="background: var(--bg); padding: 1rem; border-radius: 8px; text-align: center;">
+                            <div style="font-size: 0.875rem; color: var(--text-light); margin-bottom: 0.5rem;">Total Audits</div>
+                            <div style="font-size: 2rem; font-weight: 700; color: var(--primary);">${totalAudits}</div>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+                        <button class="btn btn-primary btn-sm" onclick="generateAnalysisPDF('${store}', 'audits')">📄 Export Audits PDF</button>
+                        <button class="btn btn-secondary btn-sm" onclick="downloadAuditsCSV('${store}')">📊 Export CSV</button>
+                    </div>
+                `;
+                
+                // Render Filter Section
+                const availableRounds = [...new Set(allAudits.map(a => a.round))].sort();
+                filterDiv.innerHTML = `
+                    <label style="display: block; font-size: 0.875rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--text-light);">Filter by Round:</label>
+                    <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                        <button style="padding: 0.5rem 1rem; border-radius: 6px; border: 1px solid var(--border); background: ${selectedRound === 'all' ? 'var(--primary)' : 'var(--surface)'}; color: ${selectedRound === 'all' ? 'white' : 'var(--text)'}; cursor: pointer; font-weight: 500; transition: all 0.2s;" onclick="switchRound('all')">All Audits (${allAudits.length})</button>
+                        ${availableRounds.map(round => `
+                            <button style="padding: 0.5rem 1rem; border-radius: 6px; border: 1px solid var(--border); background: ${selectedRound === round.toString() ? 'var(--primary)' : 'var(--surface)'}; color: ${selectedRound === round.toString() ? 'white' : 'var(--text)'}; cursor: pointer; font-weight: 500; transition: all 0.2s;" onclick="switchRound('${round}')">Round ${round} (${allAudits.filter(a => a.round === round).length})</button>
+                        `).join('')}
+                    </div>
+                `;
+                
+                // Render Audits
+                content.innerHTML = `
+                    ${filteredAudits.map((audit, idx) => `
+                        <div class="audit-item">
+                            <div class="audit-header">
+                                <div>
+                                    <div class="auditor-name">${audit.shopper}</div>
+                                    <div class="audit-time">${audit.date} • Round ${audit.round}</div>
+                                </div>
+                            </div>
+                            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem; margin: 0.75rem 0; font-size: 0.8125rem;">
+                                <span class="score-badge score-${audit.greeting === 'Yes' ? 'excellent' : 'fair'}" style="text-align: center;">Greeting: ${audit.greeting}</span>
+                                <span class="score-badge score-${audit.gloves === 'Yes' ? 'excellent' : 'fair'}" style="text-align: center;">Gloves: ${audit.gloves}</span>
+                                <span class="score-badge score-${audit.googleQR === 'Yes' ? 'excellent' : 'fair'}" style="text-align: center;">QR: ${audit.googleQR}</span>
+                            </div>
+                            <div class="audit-scores">
+                                <span class="score-badge score-${audit.score >= 8 ? 'excellent' : audit.score >= 7 ? 'good' : 'fair'}">
+                                    Score: ${audit.score}/10
+                                </span>
+                            </div>
+                            <button class="btn btn-delete btn-sm" onclick="deleteAudit('${store}', ${allAudits.indexOf(audit)})">Delete</button>
+                        </div>
+                    `).join('')}
+                `;
+            } else {
+                statsDiv.innerHTML = '';
+                filterDiv.innerHTML = '';
+                content.innerHTML = generateStoreAnalysis(store, filteredAudits);
+            }
+        }
+
+        function generateStoreAnalysis(storeName, audits) {
+            const store = stores.find(s => s.name === storeName);
+            
+            // Calculate metrics
+            const avgScore = audits.length > 0 ? (audits.reduce((sum, a) => sum + a.score, 0) / audits.length).toFixed(1) : store.avgScore;
+            const greetingYes = audits.filter(a => a.greeting === 'Yes').length;
+            const glovesYes = audits.filter(a => a.gloves === 'Yes').length;
+            const qrYes = audits.filter(a => a.googleQR === 'Yes').length;
+            
+            // Determine rating
+            let rating = 'Good';
+            if (avgScore >= 9) rating = 'Excellent';
+            if (avgScore < 7) rating = 'Average';
+            if (avgScore < 6) rating = 'Needs Work';
+            
+            return `
+                <div class="analysis-section">
+                    <div class="analysis-title">Overall Snapshot</div>
+                    <div class="analysis-badge badge-${rating === 'Excellent' ? 'excellent-big' : rating === 'Good' ? 'good-big' : 'average-big'}">
+                        ✓ Experience: ${rating}
+                    </div>
+                    <p class="analysis-text">
+                        ${rating === 'Excellent' ? 'Store delivers excellent customer experience with strong adherence to SOPs.' : ''}
+                        ${rating === 'Good' ? 'Store shows good performance. Key behaviour gaps around greeting, watch handling and product confidence should be prioritised.' : ''}
+                        ${rating === 'Average' ? 'Store needs improvement in key areas. Focus on greeting SOP, glove usage, and product training.' : ''}
+                    </p>
+                </div>
+
+                <div class="analysis-section">
+                    <div class="analysis-title">What Worked Well</div>
+                    <ul class="analysis-bullets">
+                        <li>Store location and ambience impressed shoppers</li>
+                        ${glovesYes > audits.length / 2 ? '<li>Watch handling SOP well executed</li>' : ''}
+                        ${qrYes > audits.length / 2 ? '<li>Google Review QR code visible and accessible</li>' : ''}
+                        <li>Overall cleanliness maintained</li>
+                    </ul>
+                </div>
+
+                <div class="analysis-section">
+                    <div class="analysis-title">Key Gaps</div>
+                    <ul class="analysis-bullets">
+                        ${greetingYes < audits.length / 2 ? '<li>Greeting missing on entry in ' + Math.round((1 - greetingYes / audits.length) * 100) + '% of visits (SOP: 5-second warm welcome)</li>' : ''}
+                        ${glovesYes < audits.length / 2 ? '<li>Watch handling glove SOP not followed consistently</li>' : ''}
+                        <li>Product explanation confidence needs improvement</li>
+                    </ul>
+                </div>
+
+                <div class="analysis-section">
+                    <div class="analysis-title">Top 5 Priority Fixes</div>
+                    <ol class="analysis-numbered">
+                        <li><strong>Greeting SOP:</strong> Enforce 5-second warm welcome with scripted opener</li>
+                        <li><strong>Watch Handling:</strong> Mandatory gloves + tray for premium presentation</li>
+                        <li><strong>Product Confidence:</strong> Short feature lines and staff rehearsal</li>
+                        <li><strong>3-Option Selling:</strong> Present Good/Better/Best in every interaction</li>
+                        <li><strong>Review Ask:</strong> Integrate Google QR request into checkout script</li>
+                    </ol>
+                </div>
+
+                <div class="analysis-section">
+                    <div class="analysis-title">Focused Training Plan</div>
+                    <div style="padding: 0.75rem 0;">
+                        <strong>Module A – Greeting (30 mins)</strong><br/>
+                        Practice 5-second greet drills and warm openers
+                    </div>
+                    <div style="padding: 0.75rem 0;">
+                        <strong>Module B – Watch Handling (30 mins)</strong><br/>
+                        Gloves timing, tray usage, handling language
+                    </div>
+                    <div style="padding: 0.75rem 0;">
+                        <strong>Module C – Product Confidence (45 mins)</strong><br/>
+                        Short feature lines and roleplays
+                    </div>
+                </div>
+
+                <div class="analysis-section">
+                    <div class="analysis-title">Summary</div>
+                    <p class="analysis-text">
+                        Focus on greeting, handling SOP and product-confidence scripting to convert positive in-store perception into improved sales outcomes. Ambience and display standards are strong—align staff behaviour and training with those standards.
+                    </p>
+                </div>
+
+                <div style="display: flex; gap: 1rem; margin-top: 1.5rem; flex-wrap: wrap;">
+                    <button class="btn btn-primary btn-sm" onclick="generateAnalysisPDF('${storeName}', 'analysis')">📄 Download Analysis PDF</button>
+                    <button class="btn btn-secondary btn-sm" onclick="downloadAnalysisCSV('${storeName}')">📊 Download CSV</button>
+                </div>
+            `;
+        }
+
+        function deleteAudit(store, idx) {
+            if (confirm('Delete this audit?')) {
+                storeAudits[store].splice(idx, 1);
+                renderPanelContent();
+            }
+        }
+
+        function switchPage(page) {
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+            document.getElementById(page + 'Page').classList.add('active');
+            event.target.classList.add('active');
+            if (page === 'dashboard') renderDashboard();
+        }
+
+        function requireLogin(page) {
+            if (isLoggedIn) {
+                switchPage(page);
+            } else {
+                document.getElementById('loginModal').classList.add('show');
+                document.getElementById('loginUsername').focus();
+            }
+        }
+
+        function attemptLogin() {
+            const user = document.getElementById('loginUsername').value;
+            const pass = document.getElementById('loginPassword').value;
+            if (user === 'admin' && pass === 'admin123') {
+                isLoggedIn = true;
+                closeLogin();
+                switchPage('dashboard');
+            } else {
+                document.getElementById('loginError').classList.add('show');
+            }
+        }
+
+        function closeLogin() {
+            document.getElementById('loginModal').classList.remove('show');
+            document.getElementById('loginError').classList.remove('show');
+        }
+
+        function saveDraft() {
+            const formData = new FormData(document.getElementById('auditForm'));
+            localStorage.setItem('auditDraft', JSON.stringify(Object.fromEntries(formData)));
+            alert('Draft saved!');
+        }
+
+        function showSuccess() {
+            document.getElementById('successModal').classList.add('show');
+        }
+
+        function closeSuccess() {
+            document.getElementById('successModal').classList.remove('show');
+            document.getElementById('auditForm').reset();
+            document.querySelectorAll('.rating-btn').forEach(b => b.classList.remove('active'));
+            switchPage('audit');
+        }
+
+        function downloadPDF() {
+            alert('PDF download feature would generate audit PDF report');
+        }
+
+        function downloadCSV() {
+            alert('CSV download feature would generate audit data CSV');
+        }
+
+        function generateAnalysisPDF(store, type) {
+            const audits = selectedRound === 'all' ? storeAudits[store] : storeAudits[store].filter(a => a.round === parseInt(selectedRound));
+            const roundLabel = selectedRound === 'all' ? 'All Rounds' : `Round ${selectedRound}`;
+            
+            if (type === 'audits') {
+                // Generate Audits PDF
+                const element = document.createElement('div');
+                element.style.padding = '20px';
+                element.style.fontFamily = 'Arial, sans-serif';
+                element.innerHTML = `
+                    <h1 style="color: #32b8c6; margin-bottom: 20px;">${store} - Audit Report</h1>
+                    <h2 style="color: #333; font-size: 16px; margin-bottom: 15px;">${roundLabel}</h2>
+                    <p style="margin-bottom: 20px;">Generated: ${new Date().toLocaleDateString()}</p>
+                    
+                    <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
+                        <thead>
+                            <tr style="background: #32b8c6; color: white;">
+                                <th style="border: 1px solid #ddd; padding: 10px; text-align: left;">Auditor</th>
+                                <th style="border: 1px solid #ddd; padding: 10px; text-align: left;">Date</th>
+                                <th style="border: 1px solid #ddd; padding: 10px; text-align: center;">Score</th>
+                                <th style="border: 1px solid #ddd; padding: 10px; text-align: center;">Greeting</th>
+                                <th style="border: 1px solid #ddd; padding: 10px; text-align: center;">Gloves</th>
+                                <th style="border: 1px solid #ddd; padding: 10px; text-align: center;">QR Code</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${audits.map(audit => `
+                                <tr>
+                                    <td style="border: 1px solid #ddd; padding: 10px;">${audit.shopper}</td>
+                                    <td style="border: 1px solid #ddd; padding: 10px;">${audit.date}</td>
+                                    <td style="border: 1px solid #ddd; padding: 10px; text-align: center; font-weight: bold; color: ${audit.score >= 8 ? '#10b981' : audit.score >= 7 ? '#32b8c6' : '#ef4444'};">${audit.score}/10</td>
+                                    <td style="border: 1px solid #ddd; padding: 10px; text-align: center; color: ${audit.greeting === 'Yes' ? '#10b981' : '#ef4444'};">${audit.greeting}</td>
+                                    <td style="border: 1px solid #ddd; padding: 10px; text-align: center; color: ${audit.gloves === 'Yes' ? '#10b981' : '#ef4444'};">${audit.gloves}</td>
+                                    <td style="border: 1px solid #ddd; padding: 10px; text-align: center; color: ${audit.googleQR === 'Yes' ? '#10b981' : '#ef4444'};">${audit.googleQR}</td>
+                                </tr>
+                            `).join('')}
+                        </tbody>
+                    </table>
+                    
+                    <p style="font-size: 12px; color: #999;">Total Audits: ${audits.length} | Average Score: ${(audits.reduce((sum, a) => sum + a.score, 0) / audits.length).toFixed(1)}</p>
+                `;
+                
+                const opt = {
+                    margin: 10,
+                    filename: `${store}_Audits_${roundLabel.replace(' ', '_')}.pdf`,
+                    image: { type: 'jpeg', quality: 0.98 },
+                    html2canvas: { scale: 2 },
+                    jsPDF: { orientation: 'landscape', unit: 'mm', format: 'a4' }
+                };
+                
+                html2pdf().set(opt).from(element).save();
+            } else if (type === 'analysis') {
+                // Generate Analysis PDF
+                const analysisHTML = document.getElementById('panelContent').innerHTML;
+                const element = document.createElement('div');
+                element.style.padding = '20px';
+                element.style.fontFamily = 'Arial, sans-serif';
+                element.innerHTML = `
+                    <h1 style="color: #32b8c6; margin-bottom: 10px;">${store}</h1>
+                    <h2 style="color: #666; font-size: 14px; margin-bottom: 20px;">Store Analysis - ${roundLabel}</h2>
+                    <p style="margin-bottom: 30px; color: #999;">Generated: ${new Date().toLocaleDateString()}</p>
+                    ${analysisHTML}
+                `;
+                
+                const opt = {
+                    margin: 10,
+                    filename: `${store}_Analysis_${roundLabel.replace(' ', '_')}.pdf`,
+                    image: { type: 'jpeg', quality: 0.98 },
+                    html2canvas: { scale: 2 },
+                    jsPDF: { orientation: 'portrait', unit: 'mm', format: 'a4' }
+                };
+                
+                html2pdf().set(opt).from(element).save();
+            }
+        }
+
+        function downloadAuditsCSV(store) {
+            const audits = selectedRound === 'all' ? storeAudits[store] : storeAudits[store].filter(a => a.round === parseInt(selectedRound));
+            let csv = 'Auditor,Date,Score,Greeting,Gloves,QR Code\n';
+            audits.forEach(audit => {
+                csv += `"${audit.shopper}","${audit.date}",${audit.score},"${audit.greeting}","${audit.gloves}","${audit.googleQR}"\n`;
+            });
+            const blob = new Blob([csv], { type: 'text/csv' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `${store}_Audits_${selectedRound === 'all' ? 'All' : 'Round_' + selectedRound}.csv`;
+            a.click();
+        }
+    </script>
+</body>
+</html>
